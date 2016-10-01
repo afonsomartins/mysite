@@ -1,0 +1,61 @@
+{% extends 'base/logado.html' %}
+
+{% block perfilactive %}
+active
+{% endblock %}
+
+{% block conteudo %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Perfil
+      </h1>
+      <ol class="breadcrumb">
+        <li class="active"> <i class="fa fa-file-o"></i> Perfil </li>
+      </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+      <div class="box">
+        <div class="box-body">
+          <ul class="lista">
+            <li class="linha">
+              <span class="caixa-tag">Email:</span><span class="caixa">
+              {{ user.aluno.email }}
+            </span>
+            </li>
+            <li class="linha">
+              <span class="caixa-tag">Nome:</span><span class="caixa">
+              {{ user.aluno.nome }}
+            </span>
+            </li>
+            <li class="linha">
+              <span class="caixa-tag">Sobrenome:</span><span class="caixa">
+              {{ user.aluno.sobrenome }}
+            </span>
+            </li>
+            <li class="linha">
+              <span class="caixa-tag">Whatsapp:</span><span class="caixa">
+              {{ user.aluno.whatsapp }}
+            </span>
+            </li>
+            <li class="linha">
+              <span class="caixa-tag">Status:</span><span class="caixa">
+              {{ user.aluno.status }}
+            </span>
+            </li>
+          </ul> 
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2 col-xs-1"></div>
+              <a href="{% url 'edit_perfil' %}" class="botao text-center col-md-4 col-xs-5"> Editar </a>              
+              <a href="{% url 'auth_password_change' %}" class="botao text-center col-md-4 col-xs-5"> Alterar senha </a>
+            </div><!-- /.row" -->
+          </div><!-- /.container -->
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+    </section><!-- /.content -->
+  </div><!-- /.content-wrapper -->
+{% endblock %}

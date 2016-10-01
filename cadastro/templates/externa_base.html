@@ -1,0 +1,58 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<html lang="pt-br">
+<head>
+<title>EJECT| Capacita</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html" />
+<meta charset="UTF-8">
+<meta name="author" content="Alan Ramalho">
+<meta name="keywords" content="capacita, treinamento, eject, prosempre, django, html, css, python, empresa, junior, RN, Natal, ufrn, web" />
+<meta name="description" content="O sistema de treinamento da EJECT tem o objetivo de capacitar não só os membros da EJECT, mas qualquer aluno da UFRN que esteja interessado em aprender.">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+<link href="{% static 'cadastro/css/externa_base2.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="icon" sizes="192x192" href="//static.ejectufrn.com.br/eject/sitio/images/iconeject.png">
+<link rel="shortcut icon" href="//static.ejectufrn.com.br/eject/sitio/images/favicon.png" type="image/png" >
+</head>
+<body>
+<!-- banner -->
+  <div class="banner">
+    <div class="container scale-zoom-out-1">
+      <div class="header">        
+        <div class="xs-text-center">
+          <a><img src="{% static 'cadastro/images/logo-min.png' %}" alt="Logo da EJECT" width="100" height="113" /></a>
+        </div>
+        {% block menu %} {% endblock %}
+        <div class="clearfix"> </div>
+      </div>
+      {% block top %} {% endblock %}
+    </div><!-- container -->
+    </div><!-- banner -->   
+      </div>
+    </div>
+  </div>
+<!-- //banner -->
+  {% block bot %} {% endblock %}
+<!-- footer -->
+  <div class="footer grad-cinza">
+    <div class="container">
+      <div class="footer-left">
+        <p>Copyright © 2016 EJECT - Empresa Júnior da Escola de Ciências e Tecnologia. Todos os direitos reservados
+        </p>
+      </div>
+    </div>
+  </div>
+<!-- //footer -->
+<!-- js -->
+<script type="text/javascript" src="{% static 'cadastro/js/externa_base2.min.js' %}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

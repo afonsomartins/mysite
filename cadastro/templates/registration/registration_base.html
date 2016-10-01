@@ -1,0 +1,19 @@
+{% extends 'externa_base.html' %}
+
+{% block top %}
+    <div id="cadastro" class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#principal">{% block titulo %}{% endblock %}</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="principal">
+          {% block registration_base_content %}{% endblock %}
+        </div>
+        <div id="ta_aqui_pra_nao_buga"></div>
+       </div><!-- tab-content -->
+{% endblock %}
+
+{% block bot %}
+{% endblock %}

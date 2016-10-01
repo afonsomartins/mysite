@@ -1,0 +1,11 @@
+{% extends 'registration/registration_base.html' %}
+
+{% block registration_base_content %}
+            <p class="text-white">
+            {% block content %}{% endblock %}
+            </p>
+            <br>
+            <a class="button button-block text-center" href="{% url 'login' %}">
+              VOLTAR 
+            </a>
+{% endblock %}

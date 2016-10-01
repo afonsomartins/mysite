@@ -1,0 +1,129 @@
+{% extends 'externa_base.html' %}
+{% load staticfiles %}
+
+{% block top %}
+      <div id="cadastro" class="form container">
+        <ul class="tab-group">
+          <li class="tab active"><a href="#login">Login</a></li>        
+          <li class="tab"><a href="#signup">Cadastro</a></li>
+        </ul>        
+        <div class="tab-content">
+          <div id="login">   
+            <h1>Bem Vindo!</h1>            
+            <form method="post" autocomplete="off">
+              {% csrf_token %}
+              {% for alerta in alerta_login %}
+              <div class="text-white text-center">
+                {{ alerta }}
+              </div>
+              {% endfor %}
+              {% for alerta in alerta_cadastro %}
+              <div class="text-white text-center">
+                {{ alerta }}
+              </div>
+              {% endfor %}
+              <div class="field-wrap">
+                <label>
+                  Usuário<span class="req">*</span>
+                </label>
+                {{ form_login.username }}
+              </div>              
+              <div class="field-wrap">
+                <label>
+                  Senha<span class="req">*</span>
+                </label>
+                {{ form_login.password }}
+              </div>
+              <p class="forgot">
+                <a href="{% url 'auth_password_reset' %}">
+                  Esqueceu a senha?
+                </a>
+              </p>
+              <input class="button button-block" type="submit" name="login" value="ENTRAR">          
+            </form>
+          </div>        
+          <div id="signup">   
+            <h1>Cadastro</h1>
+            <form method="post" autocomplete="off">
+            {% csrf_token %}
+            {% for alerta in alerta_cadastro %}
+            <div class="mensagem azul4 text-white">
+              {{ alerta }}
+            </div>
+            {% endfor %}
+            <div class="row">
+              <div class="field-wrap col-md-6 col-xs-12">              
+                <label class="fix-margin-left">
+                  Nome<span class="req">*</span>
+                </label>
+                {{ form_cadastro.nome }}
+              </div>
+              <div class="field-wrap col-md-6 col-xs-12">
+                <label class="fix-margin-left">
+                  Sobrenome<span class="req">*</span>
+                </label>
+                {{ form_cadastro.sobrenome }}
+              </div>
+            </div>
+            <div class="field-wrap">
+              <label>
+                Email<span class="req">*</span>
+              </label>
+              {{ form_cadastro.email }}
+            </div>
+            <div class="field-wrap">
+              <label>
+                WhatsApp<span class="req">*</span>
+              </label>
+              {{ form_cadastro.whatsapp }}
+            </div>          
+              <div class="field-wrap">
+                <label>
+                  Usuário<span class="req">*</span>
+                </label>
+                {{ form_cadastro.username }}
+              </div>
+              <div class="field-wrap">
+                <label>
+                  Senha<span class="req">*</span>
+                </label>
+                {{ form_cadastro.password }}
+              </div>
+            <input class="button button-block" type="submit" name="cadastro" value="ENVIAR">
+            </form>
+          </div>
+         </div><!-- tab-content -->
+{% endblock %}
+
+{% block bot %}
+<!-- portfolio -->
+  <div id="sobre" class="portfolio grad-azul4 text-white text-justify">
+    <div class="container">
+      <h2>Sobre nós</h2>
+      <p>Uma empresa júnior fundada em 15 de julho de 2010, formada apenas por alunos do Bacharelado de Ciências e Tecnologia da UFRN, que são compromissados, focados em resultados e que buscam um diferencial no mercado de trabalho. Prestamos diversos serviços à sociedade, encontrando soluções para variados problemas na área de desenvolvimento web.</p>
+      <div class="read center">
+        <a class="botao-saiba-mais" href="http://www.ejectufrn.com.br">Saiba mais</a>
+      </div>
+    </div>
+  </div>
+<!-- //portfolio -->
+<!-- about -->
+  <div id="treinamentos" class="banner portfolio fundo1 textazul4 text-justify">
+    <div class="container">
+      <h2>Capacita</h2>
+      <p>O sistema de treinamento da EJECT, lançado em 04 de agosto de 2016, tem o objetivo de capacitar não só os membros da EJECT, mas qualquer aluno da UFRN que esteja interessado em aprender. A maioria dos curso são de ensino a distância, com uma base de pessoas para ajudar em caso dúvidas. Em alguns treinamentos há exclusividade para membros da EJECT, em outros há uma preferência para quem deseja se juntar a nós, mas, também há aqueles que são livres para todos sem nenhum compromisso.
+      </p>
+      <div class="read center">
+        <a class="botao-cadastrar" href="#cadastro" class="scroll"> Cadastre-se </a>
+      </div>
+      <!-- <div class="read center">
+        <a class="scroll botao-cadastrar" href="#cadastro">Cadastre-se</a>
+      </div> -->
+    </div>
+  </div>
+<!-- //about -->
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'cadastro/js/index.min.js' %}"></script>
+{% endblock %}

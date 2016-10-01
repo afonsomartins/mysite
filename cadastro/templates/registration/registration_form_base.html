@@ -1,0 +1,14 @@
+{% extends 'registration/registration_base.html' %}
+
+{% block registration_base_content %}
+          <form method="post" autocomplete="off">
+          {% csrf_token %}
+          
+            {% block alerta %}{% endblock %}
+
+            {% block content %}{% endblock %}
+            
+            <p class="forgot"><a href="{% url 'login' %}">>> Voltar</a></p>
+            <input class="button button-block" type="submit" value="{% block submit %}{% endblock %}">
+          </form>
+{% endblock %}
